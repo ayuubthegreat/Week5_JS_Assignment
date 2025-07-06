@@ -30,7 +30,16 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
+const gamerProfile = {
+  username: "ShadowSlayer",
+  level: 5,
+  isOnline: false
+};
+const updateOnlineStatus = function(gamerProfile, status) {
+   gamerProfile.isOnline = status;
+   console.log(`${gamerProfile.username} is ${gamerProfile.isOnline ? "online" : "not online"}`);
+}
+updateOnlineStatus(gamerProfile, true);
 
 /*
 Task 2: Dress Inventory Checker 👗 👗 👗 👗 👗
@@ -65,6 +74,22 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
+const dress = {
+  name: "Evening Gown",
+  size: "M",
+  inStock: true
+};
+const checkAvailability = function(dressObj) {
+   if (dressObj?.inStock && dressObj.inStock !== undefined) {
+      console.log(`${dressObj.name} is available in size ${dressObj.size}.`);
+   } else if (!dressObj?.inStock && dressObj.inStock !== undefined) {
+      console.log(`${dressObj.name} is not in stock.`);
+   } else {
+      console.log(`${dressObj} is not an appropiate object.`);
+   }
+}
+checkAvailability("P");
+checkAvailability(dress);
 
 /*
 Task 3: Supercar Feature Adder 🚗 🚗 🚗 🚗
@@ -104,3 +129,17 @@ Features:
 */
 
 // ✍️ Solve it here ✍️
+const supercar = {
+  model: "Toyota Prius",
+  price: 4000,
+  features: {
+    color: "Gray"
+  }
+};
+
+const addFeature = function(supercar, newFeature) {
+   supercar.features[newFeature] = true;
+   console.log(supercar.features ? supercar.features : "This object is undefined.");
+}
+
+addFeature(supercar, "maximumOverdrive");

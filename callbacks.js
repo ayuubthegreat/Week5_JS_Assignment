@@ -19,7 +19,13 @@ Expected Output:
 // ✍️ Solve it here ✍️
 
 
-
+const sendMessage = function(name, callback) {
+  callback(name);
+}
+const callbackFunction = function(name) {
+  console.log(`Welcome, ${name}!`);
+}
+sendMessage("Ayuub", callbackFunction);
 
 /*
 Task 2: Temperature Checker 🌡️🌡️🌡️🌡️
@@ -48,7 +54,20 @@ Expected Output:
 
 // ✍️ Solve it here ✍️
 
-
+const checkTemperature = function(temp) {
+  let tempDesc = ""; 
+  if (temp > 30) {
+    tempDesc = "hot";
+  } else if (temp <= 30 && temp >= 15) {
+    tempDesc = "warm";
+  } else if (temp < 15) {
+    tempDesc = "cold";
+  } else {
+    tempDesc = "undefined";
+  }
+  console.log(`${temp} degrees Celcius is ${tempDesc[0].toUpperCase() + tempDesc.substring(1, tempDesc.length)}`);
+}
+checkTemperature(55);
 
 
 /*
